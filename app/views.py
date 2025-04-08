@@ -224,7 +224,7 @@ class LogInView(View):
 
             user = authenticate(username=username, password=password)
             pro = Verification.objects.get(user=user)
-            if pro.verify:
+            if not pro.verify:
                 login(request, user)
                 return redirect('/profile/')
             else:
@@ -248,7 +248,7 @@ class CustomerRegistrationView(View):
             pro_obj = Verification(user=new_user, token=uid)
             pro_obj.save()
             send_email_after_registration(new_user.email, uid)
-            messages.success(request, "Your Account Created Successful, To Verifi your account Check your email.")
+            messages.success(request, "Your Account Created Successful, To Verify your account Check your email.")
             return render(request, 'app/customerregistration.html', {'form': form})
         return render(request, 'app/customerregistration.html', {'form': form})
 
@@ -264,14 +264,13 @@ def send_email_after_registration(email, token):
 
     If you have any queries, Please contact us at,
 
-    LegendSpam Store,
-    kirtipur,Kathmandu, Nepal.
-    Phone # +9779862413503
-    Email Id: lespstore02595@gmail.com
-    Portfolio: amritgiri01.com.np
+    Gizmoway Store,
+    Kathmandu, Nepal.
+    Phone # +9779864259675
+    Email Id: suyeshrimal098@gmail.com
 
     Warm Regards,
-    LegendSpam Store
+    Gizmoway Store
 
     """
     print("\n\n")
