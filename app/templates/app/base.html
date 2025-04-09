@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
 
 
-  <title>{% block title %} {% endblock title %} | LeSp Store </title>
+  <title>{% block title %} {% endblock title %} | Gizmoway </title>
   <link rel="icon" href="{% static 'app/images/logo1.png'%}" type="">
 </head>
 
@@ -36,7 +36,7 @@
       <a class="navbar-brand" href="{% url 'home' %}"><img class="navbar-brand" height="35" width="70"
           src="{% static 'app/images/logo1.png'%}"></a>
           <div class="fe-bolde text-center" style="color:white; padding-right:12px;">
-            <span class="text-warning" id="time"></span> 
+            {% comment %} <span class="text-warning" id="time"></span>  {% endcomment %}
           </div> &nbsp;
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
